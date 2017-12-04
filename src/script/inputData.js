@@ -10,4 +10,4 @@ var inputData = {
 		king: 'K',
 		queen: 'Q'
 	}
-}
+};

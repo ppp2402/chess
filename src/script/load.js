@@ -1,5 +1,7 @@
 var chess = (function() {
 
+	"use strict";
+
 	function setFirstRow(i) {
 		var playerInitial;
 		switch (i) {
@@ -58,7 +60,7 @@ var chess = (function() {
 			'data-row': dataRow,
 			'data-isBlack': isBlack(playerColor)
 		};
-		for(attribute in attributeOb) {
+		for(var attribute in attributeOb) {
 			cellElement.setAttribute(attribute, attributeOb[attribute]);
 		}
 		cellElement.addEventListener('click', function(evt) {
@@ -85,10 +87,10 @@ var chess = (function() {
 		var chessBoard = emptyChessBoard();
 		var backgroundColor, cellElementTemp, playerColor, playerInitial;
 
-		for(let i = 1; i <= 8; i++) {
+		for(var i = 1; i <= 8; i++) {
 			
 			backgroundColor = setCellColor(backgroundColor);
-			for(let j = 1; j <= 8; j++) {
+			for(var j = 1; j <= 8; j++) {
 
 				switch (i) {
 					case 1:							
@@ -113,9 +115,12 @@ var chess = (function() {
 						break;							
 				}
 				
-				let cellElement = createCell(backgroundColor, j, i, '', playerInitial, playerColor);
+				var cellElement = createCell(backgroundColor, j, i, '', playerInitial, playerColor);
 				backgroundColor = setCellColor(backgroundColor);
-				(i == 1 && j == 1) ? chessBoard.appendChild(cellElement) : chessBoard.insertBefore(cellElement, cellElementTemp);
+				if(i == 1 && j == 1)
+					chessBoard.appendChild(cellElement);
+				else
+					chessBoard.insertBefore(cellElement, cellElementTemp);
 				cellElementTemp = cellElement;
 			}	
 		}
@@ -125,10 +130,10 @@ var chess = (function() {
 		var chessBoard = emptyChessBoard();
 		var backgroundColor, cellElementTemp, playerColor, playerInitial;
 
-		for(let i = 8; i >= 1; i--) {
+		for(var i = 8; i >= 1; i--) {
 			
 			backgroundColor = setCellColor(backgroundColor);
-			for(let j = 8; j >= 1; j--) {
+			for(var j = 8; j >= 1; j--) {
 
 				switch (i) {
 					case 1:							
@@ -153,9 +158,12 @@ var chess = (function() {
 						break;							
 				}
 				
-				let cellElement = createCell(backgroundColor, j, i, '', playerInitial, playerColor);
+				var cellElement = createCell(backgroundColor, j, i, '', playerInitial, playerColor);
 				backgroundColor = setCellColor(backgroundColor);
-				(i == 8 && j == 8) ? chessBoard.appendChild(cellElement) : chessBoard.insertBefore(cellElement, cellElementTemp);
+				if(i == 8 && j == 8)
+					chessBoard.appendChild(cellElement);
+				else
+					chessBoard.insertBefore(cellElement, cellElementTemp);
 				cellElementTemp = cellElement;
 			}	
 		}
@@ -177,7 +185,8 @@ var chess = (function() {
 			createGrid();
 			localStorage.setItem('chessFlip','0');
 		}
-	}
+	};
 	
 })();
 
+chess.init();

@@ -1,0 +1,68 @@
+/*function createXmlHttpObject() {
+	var xmlHttpObject = new XMLHttpRequest();
+	processXmlHttpObject(xmlHttpObject);
+}
+function processXmlHttpObject(xmlHttpObject, url) {
+	xmlHttpObject.open("POST", url);
+	xmlHttpObject.setRequestHeader("Content-type","application/JSON");
+	xmlHttpObject.send();
+}
+function processXmlHttpObject(xmlHttpObject, url) {
+	xmlHttpObject.onreadystatechange = function(){
+		if(xmlHttpObject.readyState === xmlHttpObject.DONE && xmlHttpObject.status === 200){
+			if(xmlHttpObject.response.length){
+				var jsonRes = JSON.parse(xmlHttpObject.response);
+				if(typeof jsonRes === "object")
+					console.log("jsonRes - ", jsonRes['a'], jsonRes.b, jsonRes.c, jsonRes.d, jsonRes.e, jsonRes.f);
+				//console.log('success', response);
+				response.forEach(function(val) {
+					console.log(val.title);
+				});
+			}
+			//document.getElementById('result').innerText = xmlHttpObject.responseText;
+		}
+		else if(xmlHttpObject.readyState === xmlHttpObject.DONE && xmlHttpObject.status !== 200){
+			console.log("Fail...");
+			console.log("xmlHttpObject.responseText = ", xmlHttpObject.responseText, xmlHttpObject.statusText);
+			throw new Error(xmlHttpObject.responseText);
+		}
+	};
+}
+createXmlHttpObject();
+
+
+console.log(xmlHttpObject);
+xmlHttpObject.send('./json/1.js');
+console.log(xmlHttpObject);
+/*xmlHttpObject.onreadystatechange
+xmlHttpObject.readyState
+xmlHttpObject.status
+xmlHttpObject.response
+xmlHttpObject.responseText
+xmlHttpObject.DONE
+xmlHttpObject.OPENED
+xmlHttpObject.LOADING
+xmlHttpObject.UNSENT
+*/
+
+
+/*console.log('aaa');
+
+$.ajax({
+	url: './json/1.js',
+	type: 'POST',
+	dataType: 'JSON',
+	success: function(response) {
+		//console.log('success', response);
+		response.forEach(function(val) {
+			console.log(val.title);
+		});
+	},
+	error: function(e) {
+		console.log('error - ', e);
+		throw new Error(e);
+	}
+});*/
+
+//http://jsonplaceholder.typicode.com/posts
+
