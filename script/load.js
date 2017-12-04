@@ -1,4 +1,4 @@
-(function() {
+var chess = (function() {
 
 	function setFirstRow(i) {
 		var playerInitial;
@@ -171,26 +171,13 @@
 			createGrid();
 		}
 	});
-	
-	function init() {
-		createGrid();
-		localStorage.setItem('chessFlip','0');
-	}
 
-	inputData = {
-		cellColorWhite: 'burlywood',
-		cellColorBlack: 'brown',
-		whitePlayerColor: 'white',
-		playerText: { 
-			pawn: 'p',
-			rook: 'R',
-			knight: 'k',
-			bishop: 'B',
-			king: 'K',
-			queen: 'Q'
+	return {
+		init: function() {
+			createGrid();
+			localStorage.setItem('chessFlip','0');
 		}
 	}
-	init();
 	
 })();
 
