@@ -1,0 +1,52 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: verdana san-sherif;
+	font-size: 1rem;
+	font-weight: normal;
+	background-color: #eee;
+}
+.container {
+	width: 1024px;
+	margin: 0 auto;
+}
+.chessBoard {
+	width: 60%;
+	margin: 20px auto;
+}
+.cell {
+	width: 70px;
+	height: 70px;
+	margin: 0;
+	display: inline-block;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+}
+.white {
+	background-color: ivory;
+}
+.black {
+	background-color: #000;
+}
+.cellText {
+	font-weight: bold;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+.button {
+	width: 250px;
+    padding: 10px;
+    margin: 10px;
+    background-color: burlywood;
+    border: 3px solid beige;
+    border-radius: 10px;
+    font-weight: bold;
+    color: brown;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 1px 1px 1px floralwhite;
+    outline: 0;
+    cursor: pointer;
+}
